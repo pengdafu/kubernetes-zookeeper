@@ -1,4 +1,4 @@
-VERSION=2.0-0.1.1
+VERSION=2.2.0
 PROJECT_ID=nirmata
 PROJECT=registry-v2.nirmata.io/${PROJECT_ID}
 
