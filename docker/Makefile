@@ -1,6 +1,7 @@
-VERSION=2.2.0
+VERSION=3.5.4-beta
 PROJECT_ID=nirmata
-PROJECT=registry-v2.nirmata.io/${PROJECT_ID}
+REGISTRY=docker.io
+PROJECT=${REGISTRY}/${PROJECT_ID}
 
 all: build
 
