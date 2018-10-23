@@ -43,8 +43,8 @@ COPY scripts /opt/zookeeper/bin/
 
 #replace original zk jar with the one with patch 1621:
 # https://issues.apache.org/jira/browse/ZOOKEEPER-1621
-RUN rm /opt/zookeeper/zookeeper-3.5.4-beta 
-COPY zookeeper-3.5.4-beta-patch-1621.jar /opt/zookeeper/zookeeper-3.5.4-beta
+RUN rm /opt/zookeeper/zookeeper-3.5.4-beta.jar
+COPY zookeeper-3.5.4-beta-patch-1621.jar /opt/zookeeper/zookeeper-3.5.4-beta.jar
 
 # Create a user for the zookeeper process and configure file system ownership 
 # for nessecary directories and symlink the distribution as a user executable
