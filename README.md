@@ -1,4 +1,18 @@
+# Nirmata Kubernetes Zookeeper
+
+> This project is a copy of the Kubernetes contrib project:
+> 
+> https://github.com/kubernetes/contrib/tree/master/statefulsets/zookeeper
+> 
+> The following modifications have been applied:
+> 1. Update to Zookeeper version 3.5.4-beta
+> 2. Patch for out of disk condition (https://issues.apache.org/jira/browse/ZOOKEEPER-1621).
+>
+
+***
+
 # Kubernetes ZooKeeper
+
 This project contains tools to facilitate the deployment of 
 [Apache ZooKeeper](https://zookeeper.apache.org/) on 
 [Kubernetes](http://kubernetes.io/) using 

@@ -1,4 +1,4 @@
-VERSION=3.5.4-beta
+VERSION=v1-3.5.4-beta
 PROJECT_ID=nirmata
 REGISTRY=docker.io
 PROJECT=${REGISTRY}/${PROJECT_ID}
