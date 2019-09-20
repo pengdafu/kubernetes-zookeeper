@@ -5,9 +5,10 @@
 > https://github.com/kubernetes/contrib/tree/master/statefulsets/zookeeper
 > 
 > The following modifications have been applied:
-> 1. Update to Zookeeper version 3.5.4-beta
-> 2. Patch for out of disk condition (https://issues.apache.org/jira/browse/ZOOKEEPER-1621).
->
+> 1. Update to Zookeeper version 3.5.5
+> 2. Use [OpenJDK 12](https://hub.docker.com/r/adoptopenjdk/openjdk12) [OpenJ9 JRE](https://www.eclipse.org/openj9/)
+> 3. Patch for out of disk condition (https://issues.apache.org/jira/browse/ZOOKEEPER-1621).
+> 
 
 ***
 
