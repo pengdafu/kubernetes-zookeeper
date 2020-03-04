@@ -12,31 +12,20 @@ RUN set -eux; \
     apt-get update; \
     DEBIAN_FRONTEND=noninteractive \
     apt-get install -y --no-install-recommends \
-        ca-certificates \
-        dirmngr \
         gosu \
-        gnupg \
-        netcat \
         wget; \
     rm -rf /var/lib/apt/lists/*; \
 # Verify that gosu binary works
     gosu nobody true
 
-ARG GPG_KEY=3F7A1D16FA4217B1DC75E1C9FFE35B7F15DFA1BA
-ARG SHORT_DISTRO_NAME=zookeeper-3.5.5
-ARG DISTRO_NAME=apache-zookeeper-3.5.5-bin
+ARG SHORT_DISTRO_NAME=zookeeper-3.5.7
+ARG DISTRO_NAME=apache-zookeeper-3.5.7-bin
 
 # Download Apache Zookeeper, verify its PGP signature, untar and clean up
 RUN set -eux; \
-    wget -q "https://www.apache.org/dist/zookeeper/$SHORT_DISTRO_NAME/$DISTRO_NAME.tar.gz"; \
-    wget -q "https://www.apache.org/dist/zookeeper/$SHORT_DISTRO_NAME/$DISTRO_NAME.tar.gz.asc"; \
-    export GNUPGHOME="$(mktemp -d)"; \
-    gpg --keyserver ha.pool.sks-keyservers.net --recv-key "$GPG_KEY" || \
-    gpg --keyserver pgp.mit.edu --recv-keys "$GPG_KEY" || \
-    gpg --keyserver keyserver.pgp.com --recv-keys "$GPG_KEY"; \
-    gpg --batch --verify "$DISTRO_NAME.tar.gz.asc" "$DISTRO_NAME.tar.gz"; \
+    wget -q "https://mirrors.tuna.tsinghua.edu.cn/apache/zookeeper/$SHORT_DISTRO_NAME/$DISTRO_NAME.tar.gz"; \
     tar -xvzf "$DISTRO_NAME.tar.gz" -C /opt; \
-    rm -rf "$GNUPGHOME" "$DISTRO_NAME.tar.gz" "$DISTRO_NAME.tar.gz.asc"; \
+    rm -rf "$DISTRO_NAME.tar.gz"; \
     ln -s /opt/$DISTRO_NAME /opt/zookeeper; \
     rm -rf /opt/zookeeper/CHANGES.txt \
       /opt/zookeeper/README.txt \
